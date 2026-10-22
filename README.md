@@ -37,12 +37,17 @@ La primera vez el TV mostrará un diálogo de autorización — aceptar en panta
 
 ## Opción B — Con cleanyourtv
 
+La lista `debloat.txt` de este repo está contribuida al repo oficial de cleanyourtv: [PR #963](https://github.com/Gathin23/cleanyourtv/pull/963).
+Una vez aceptado, estará en `examples/sony-kd-55xf8096/debloat.txt` y podrás usarla directamente:
+
 ```bash
 git clone https://github.com/Gathin23/cleanyourtv
 cd cleanyourtv
 python3 -m venv tools/venv && tools/venv/bin/pip install -r tools/requirements.txt
-TV_HOST=192.168.x.x tools/disable.sh /ruta/a/debloat.txt
+TV_HOST=192.168.x.x tools/disable.sh examples/sony-kd-55xf8096/debloat.txt
 ```
+
+Hasta que el PR sea aceptado, usa el `debloat.txt` de este repo.
 
 ## Opción C — Manual
 
