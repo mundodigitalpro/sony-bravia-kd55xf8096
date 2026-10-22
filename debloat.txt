@@ -1,0 +1,73 @@
+# Sony Bravia KD-55XF8096 (2018, Android 8, firmware 5.4.0)
+# MediaTek MT5891, 2 GB RAM, España/Europa
+#
+# Compatible con cleanyourtv: TV_HOST=<ip> tools/disable.sh debloat.txt
+# O manualmente: adb -s <ip>:5555 shell pm disable-user <package>
+#
+# Todo con pm disable-user — reversible con pm enable <package>
+# Los paquetes marcados con [UNINSTALL] se eliminan con pm uninstall --user 0 (no reversible)
+
+# ACR / spyware de visualización
+tv.samba.ssm                                    # Samba TV — fingerprinta lo que ves en pantalla
+com.qterics.da.product                          # Qterics device agent / analytics
+
+# Sony bloatware y telemetría
+com.sony.dtv.promos                             # My BRAVIA promos
+com.sony.dtv.sonybugreportsys                   # subida de informes de error
+com.sony.dtv.demomode                           # modo demo de tienda
+com.sony.dtv.demosupport                        # soporte modo demo
+com.sony.dtv.customersupport                    # tile de soporte al cliente
+com.sony.dtv.smarthelp                          # ayuda interactiva
+com.sony.dtv.imanual                            # manual interactivo
+com.sony.dtv.multiscreendemo                    # demo multiscreen
+com.sony.dtv.sonyloglevelsettingsys             # configuración de nivel de log (sistema)
+com.sony.dtv.sonyloglevelsettingvnd             # configuración de nivel de log (vendor)
+com.sony.dtv.youview                            # YouView (servicio TV Reino Unido, inútil en España)
+com.sony.dtv.da.service                         # Sony device agent / soporte remoto
+com.sony.dtv.sonyselect                         # Sony Select (tienda/promos)
+com.sony.dtv.sonyselect.overlay
+com.sony.dtv.smarthomesettings                  # configuración Alexa — se ejecuta en cada arranque
+
+# Hotel / modo profesional
+com.sony.dtv.b2b.hotelmode
+com.sony.dtv.b2b.rs232csupport                  # control RS-232C
+com.sony.dtv.b2b.vendorprotocol                 # broadcaster SDDP para domótica tipo Control4
+
+# Contenido patrocinado y feeds del home
+com.sony.dtv.discovery                          # barra Discover de Sony
+com.sony.dtv.bivlinfo                           # feeds que alimentan el Discover
+com.sony.dtv.tvlaunchercustomizer               # customizaciones Sony en filas del home
+
+# Auto-instalación de apps de socios
+android.autoinstalls.config.sony.bravia         # instala apps de socios desde Play Store al arrancar
+
+# Google telemetría / inútiles
+com.google.android.feedback
+com.google.android.tvrecommendations            # filas de recomendaciones del launcher
+com.google.android.backdrop                     # salvapantallas ambient
+com.google.android.tv.bugreportsender
+com.google.android.marvin.talkback             # accesibilidad (lector de pantalla)
+com.google.android.videos                       # Play Películas — servicio cerrado, consumía 108 MB
+com.google.android.play.games                   # Play Games
+com.android.printspooler                        # impresora
+
+# Apps de streaming preinstaladas — [UNINSTALL] con pm uninstall --user 0
+# com.vodafone.vtv.atv.es                       # Lowi/Vodafone
+# com.netflix.ninja
+# com.amazon.amazonvideo.livingroom
+# com.disney.disneyplus
+# com.youview.tv.servicehost
+
+# Anuncios en el home — [UNINSTALL] con pm uninstall --user 0
+# com.sony.dtv.tvxlauncher.titlelist            # fila de contenido patrocinado
+# com.sony.dtv.scrums.action                    # sistema SCRUMS de recomendaciones/promociones
+# com.sony.dtv.smartmediaapp                    # contenido patrocinado en el launcher
+#                                               # NOTA: también es el reproductor USB — evaluar
+
+# Conservar (hardware / funcionalidad útil)
+# com.sony.huey.dlna.module                     # DLNA renderer
+# com.uei.quicksetsdk.sony                      # control remoto universal IR
+# com.vewd.core.integration.dia                 # HbbTV / botón rojo TDT
+# com.mediatek.agent                            # capa hardware del mando
+# mtktvapi.agent                                # API chipset MediaTek
+# com.mediatek.dmagent                          # agente chipset — no tocar
