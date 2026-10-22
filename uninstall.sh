@@ -78,6 +78,8 @@ echo ""
 echo "=== Anuncios del home (desinstalar) ==="
 uninstall com.sony.dtv.tvxlauncher.titlelist
 uninstall com.sony.dtv.scrums.action
+# ADVERTENCIA: com.sony.dtv.smartmediaapp también es el reproductor de archivos desde USB.
+# Desinstalarlo elimina los anuncios del home pero pierde la reproducción USB.
 uninstall com.sony.dtv.smartmediaapp
 
 echo ""

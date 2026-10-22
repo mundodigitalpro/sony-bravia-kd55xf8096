@@ -4,7 +4,7 @@ Guía completa para eliminar bloatware, spyware y anuncios de un **Sony Bravia K
 
 **Resultado:** +50–70 MB de RAM disponible en frío, sin anuncios en el home, sin telemetría.
 
-Compatible con [cleanyourtv](https://github.com/Gathin23/cleanyourtv).
+Compatible con [cleanyourtv](https://github.com/Gathin23/cleanyourtv). Lista contribuida al repo oficial: [PR #963](https://github.com/Gathin23/cleanyourtv/pull/963).
 
 ---
 
@@ -26,7 +26,11 @@ Compatible con [cleanyourtv](https://github.com/Gathin23/cleanyourtv).
 ## Opción A — Script automático
 
 ```bash
+# Limpiar el TV
 TV_HOST=192.168.x.x bash uninstall.sh
+
+# Revertir (solo paquetes desactivados, no los desinstalados)
+TV_HOST=192.168.x.x bash restore.sh
 ```
 
 La primera vez el TV mostrará un diálogo de autorización — aceptar en pantalla.
@@ -137,7 +141,22 @@ Los paquetes desinstalados con `pm uninstall --user 0` solo se recuperan con un 
 
 ---
 
+## Firmware
+
+Ver `firmware-info.txt` para el volcado completo de `getprop` del TV. Datos clave:
+
+| Campo | Valor |
+|---|---|
+| Build | `Sony/BRAVIA_ATV3_4K_EU/BRAVIA_ATV3_4K:9/PTT1.190515.001.S54/672201:user/release-keys` |
+| Android | 9 (API 28) |
+| Security patch | 2022-01-05 |
+| Hardware | MediaTek MT5891 |
+| RAM | 2 GB |
+
+---
+
 ## Referencias
 
 - [cleanyourtv](https://github.com/Gathin23/cleanyourtv) — herramienta genérica para debloat de Android TV
+- Lista contribuida al repo oficial: [PR #963](https://github.com/Gathin23/cleanyourtv/pull/963)
 - Lista más cercana: [sony-kd-55xe8596](https://github.com/Gathin23/cleanyourtv/tree/main/examples/sony-kd-55xe8596)
